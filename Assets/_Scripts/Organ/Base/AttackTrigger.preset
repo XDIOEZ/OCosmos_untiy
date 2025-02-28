@@ -1,0 +1,347 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AttackTrigger
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 1d8659b90edb38c419ff01a7823ff25c, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: organName
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._MemberName
+    value: StartReduceStamina
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._Type
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._Int
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._String
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._X
+    value: 30
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._Y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._Z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._W
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._Object
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[1]._Type
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[1]._Int
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[1]._String
+    value: "\u653B\u51FB"
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[1]._X
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[1]._Y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[1]._Z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[1]._W
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[1]._Object
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[1]._Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[1]._MemberName
+    value: set_IsDamageModeEnabled
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._Type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._Int
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._String
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._X
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._Y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._Z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._W
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._Object
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStayAttack._PersistentCalls.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[0]._Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[0]._MemberName
+    value: StopReduceStamina
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._Type
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._Int
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._String
+    value: "\u653B\u51FB"
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._X
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._Y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._Z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._W
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[0]._PersistentArguments.Array.data[0]._Object
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[1]._Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[1]._MemberName
+    value: set_IsDamageModeEnabled
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._Type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._Int
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._String
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._X
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._Y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._Z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._W
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnEndAttack._PersistentCalls.Array.data[1]._PersistentArguments.Array.data[0]._Object
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: OnStartReturn._PersistentCalls.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rotationSpeedDegrees
+    value: 360
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ItemInHand
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _faceMouse
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: AddMaxAttackTime_AddRate
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: DefaultSpeed
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MaxSpeed
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: DefaultDistance
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MaxDistance
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: Distance
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: DefaultAttackTime
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MaxAttackTime
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: AttackTime
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: Speed
+    value: 20
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: DefaultItemBackSpeed
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MaxItemBackSpeed
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ItemBackSpeed
+    value: 20
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: DefaultItemBackTime
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MaxItemBackTime
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ItemBackTime
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: startPos.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: startPos.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: IsAttack
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: isReturn
+    value: 0
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []
