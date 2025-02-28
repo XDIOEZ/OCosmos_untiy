@@ -143,7 +143,7 @@ public class GameResManager : SingletonAutoMono<GameResManager>
                     }
                     else
                     {
-                        recipeDict[recipe.name] = recipe.outputs;
+                        recipeDict[recipe.inputs.ToString()] = recipe.outputs;
                        // Debug.Log($"成功加载并添加配方: {recipe.name}");
                     }
                 }

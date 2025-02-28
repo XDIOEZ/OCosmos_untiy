@@ -52,7 +52,7 @@ public partial class TheWorldData
         // 检查地图数据字典中是否存在该键值
         if (!WorldData.ContainsKey(centerKey))
         {
-            Debug.LogError("地图数据不存在);");
+            Debug.Log("地图数据不存在);");
             return null;
         }
 

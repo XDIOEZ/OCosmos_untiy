@@ -16,12 +16,17 @@ public static class XDTool
 
     public static int ItemId
     {
-        get { return PlayerPrefs.GetInt("ItemId", 0); } // 读取存储的 ItemId，默认值为 0
+        get 
+        {
+            PlayerPrefs.SetInt("ItemId",(PlayerPrefs.GetInt("ItemId", 0)+1)); // 保存到 PlayerPrefs
+
+            PlayerPrefs.Save(); // 确保数据写入磁盘
+
+            return PlayerPrefs.GetInt("ItemId", 0) ;
+        } // 读取存储的 ItemId，默认值为 0
         set
         {
-            itemId.GetHashCode();
-            PlayerPrefs.SetInt("ItemId", itemId); // 保存到 PlayerPrefs
-            PlayerPrefs.Save(); // 确保数据写入磁盘
+           
         }
     }
     public static int NextGuid

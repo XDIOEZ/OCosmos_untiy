@@ -7,7 +7,7 @@ using UnityEngine;
 public class WoodStick : Item
 {
     /*    public WoodStickData _data;*/
-    public GenericItemData Data;
+    public Com_ItemData Data;
     public override ItemData Item_Data
     {
         get
@@ -16,7 +16,7 @@ public class WoodStick : Item
         }
         set
         {
-            Data = (GenericItemData)value;
+            Data = (Com_ItemData)value;
         }
     }
     /*{
@@ -62,7 +62,7 @@ public class WoodStick : Item
 }
 [MemoryPackable]
 [System.Serializable]
-public partial class GenericItemData : ItemData
+public partial class Com_ItemData : ItemData
 {
     public string code;
 }

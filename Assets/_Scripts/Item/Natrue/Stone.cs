@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Stone : Item
 {
-    public GenericItemData _data;
+    public Com_ItemData _data;
 
     public override ItemData Item_Data
     {
@@ -14,7 +14,7 @@ public class Stone : Item
         }
         set
         {
-            _data = (GenericItemData)value;
+            _data = (Com_ItemData)value;
         }
     }
 /*    public override Item_Data GetData()

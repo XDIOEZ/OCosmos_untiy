@@ -14,27 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeID: a3d58a28-26c5-4c99-97cb-b94c814fa366
   version: 1.2.0
-  name: "\u4E34\u65F6\u76D4\u7532"
   inputs:
     RowItems_List:
-    - ItemName: 
-      amount: 0
-    - ItemName: 
-      amount: 0
+    - ItemName: WoodStick
+      amount: 1
     - ItemName: 
       amount: 0
     - ItemName: WoodStick
-      amount: 2
+      amount: 1
     - ItemName: Stone
       amount: 1
-    - ItemName: WoodStick
-      amount: 2
-    - ItemName: 
-      amount: 0
-    - ItemName: 
-      amount: 0
-    - ItemName: 
-      amount: 0
+    - ItemName: Stone
+      amount: 1
+    - ItemName: Stone
+      amount: 1
+    - ItemName: Stone
+      amount: 1
+    - ItemName: Stone
+      amount: 1
+    - ItemName: Stone
+      amount: 1
   outputs:
     results:
     - resultItem: TestArmor

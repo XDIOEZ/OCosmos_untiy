@@ -9,68 +9,81 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
 // 使用[System.Serializable]特性使该类可以被序列化，以便在Unity编辑器中显示和编辑
-[MemoryPackUnion(0, typeof(WeaponData))]
-[MemoryPackUnion(1, typeof(ArmorData))]
-[MemoryPackUnion(2, typeof(AmmoData))]
-[MemoryPackUnion(3, typeof(AppleTreeData))]
-[MemoryPackUnion(4, typeof(Apple_Red_Data))]
-[MemoryPackUnion(5, typeof(PlayerData))]
-[MemoryPackUnion(6, typeof(CoalData))]
-[MemoryPackUnion(7, typeof(GenericItemData))]
-[MemoryPackUnion(8, typeof(PickaxeToolData))]
-[MemoryPackUnion(9, typeof(AxeToolData))]
-//[MemoryPackUnion(8, typeof(Block_ItemData))]
+[MemoryPackUnion(0, typeof(WeaponData))]//武器数据
+[MemoryPackUnion(1, typeof(ArmorData))]//护甲数据
+[MemoryPackUnion(2, typeof(AmmoData))]//弹药数据
+[MemoryPackUnion(3, typeof(AppleTreeData))]//苹果树数据
+[MemoryPackUnion(4, typeof(Apple_Red_Data))]//红苹果数据
+[MemoryPackUnion(5, typeof(PlayerData))]//玩家数据
+[MemoryPackUnion(6, typeof(CoalData))]//煤炭数据
+[MemoryPackUnion(7, typeof(Com_ItemData))]//通用物品数据
+[MemoryPackUnion(8, typeof(PickaxeToolData))]//矿石镐工具数据
+[MemoryPackUnion(9, typeof(AxeToolData))]//斧工具数据
+[MemoryPackUnion(10, typeof(WorkerData))]//工作者数据
 [MemoryPackable(SerializeLayout.Explicit)]
 [System.Serializable]   
 public  abstract partial class ItemData
 {
     [MemoryPackOrder(0)]
     [Title("---物品数据---")]
+    [LabelText("物品名称")]
     // 公共字符串变量name，用于存储物品的名称
     public string Name;
 
-    // 公共整型变量id，用于存储物品的唯一标识符s
     [MemoryPackOrder(1)]
+    [LabelText("物品ID")]
+    // 公共整型变量id，用于存储物品的唯一标识符
     public int ID;
-    
-    // 公共字符串变量description，用于存储物品的描述信息
+
     [MemoryPackOrder(2)]
+    [LabelText("物品描述")]
+    // 公共字符串变量description，用于存储物品的描述信息
     public string Description = "什么都没有描述";
 
-    // 公共字符串变量PrefabPath，用于存储物品的预制体路径
     [MemoryPackOrder(3)]
+    [LabelText("预制体路径")]
+    // 公共字符串变量PrefabPath，用于存储物品的预制体路径
     public string PrefabPath = "";
 
-    // 公共浮点型变量Volume，用于存储物品的体积或其他相关数值
     [MemoryPackOrder(4)]
+    [LabelText("物品体积")]
+    // 公共浮点型变量Volume，用于存储物品的体积或其他相关数值
     public float Volume = 1;
 
-    //耐久度
     [MemoryPackOrder(5)]
+    [LabelText("物品耐久度")]
+    // 耐久度
     public float Durability = 1;
 
     [MemoryPackOrder(6)]
+    [LabelText("是否可拾取")]
     public bool CanBePickedUp = true;
 
-    // 公共枚举变量stackItemType，用于存储物品的类型
     [MemoryPackOrder(7)]
+    [LabelText("物品标签")]
+    // 公共枚举变量stackItemType，用于存储物品的类型
     public ItemTag ItemTags;
 
-    // 公共结构体变量stack，用于存储物品的堆叠数量和堆叠容量
     [MemoryPackOrder(8)]
+    [LabelText("物品堆叠信息")]
+    // 公共结构体变量stack，用于存储物品的堆叠数量和堆叠容量
     public ItemStack Stack;
 
-    //TODO 保存玩家位置,旋转,缩放等信息
     [MemoryPackOrder(9)]
+    [LabelText("物品位置")]
+    // 保存玩家位置
     public Vector3 Position;
 
     [MemoryPackOrder(10)]
+    [LabelText("物品旋转")]
     public Quaternion Rotation;
 
     [MemoryPackOrder(11)]
+    [LabelText("物品缩放")]
     public Vector3 Scale;
 
     [MemoryPackOrder(12)]
+    [LabelText("当前总体积")]
     public float CurrentVolume
     {
         get
@@ -78,16 +91,21 @@ public  abstract partial class ItemData
             return Stack.amount * Volume;
         }
     }
+
     [ShowInInspector, ReadOnly]
+    [LabelText("全局唯一标识")]
     public int Guid { get => _guid; set => _guid = value; }
 
-    [MemoryPackOrder(13)]//TODO 保存物品的特殊数据，比如武器的攻击力 护甲的护甲值 弹药的剩余数量等
+    [MemoryPackOrder(13)]
+    [LabelText("物品特殊数据")]
+    // 保存物品的特殊数据，比如武器的攻击力 护甲的护甲值 弹药的剩余数量等
     public string ItemSpecialData;
+
     [MemoryPackOrder(14)]
     private int _guid;
 
     // GUID属性（添加序列化保护）
-   
+
 
     // MemoryPack构造函数（关键！）
     [MemoryPackConstructor]
@@ -104,9 +122,23 @@ public  abstract partial class ItemData
     //重写ToString方法，用于在控制台输出物品信息
     public override string ToString()
     {
-
-        Debug.Log("物品名称：" + Name + "\n物品ID：" + ID + "\n物品描述：" + Description + "\n物品图标路径："   + "\n物品体积：" + Volume);
-        return "物品名称：" + Name + "\n物品ID：" + ID + "\n物品描述：" + Description + "\n物品图标路径："+ "\n物品体积：" + Volume;
+        string str = 
+            $"物品名称：{Name}," +
+            $"物品ID：{ID}," +
+            $"物品描述：{Description}," +
+            $"物品体积：{Volume}," +
+            $"物品耐久度：{Durability}," +
+            $"是否可拾取：{CanBePickedUp}," +
+            $"物品标签：{ItemTags}," +
+            $"物品堆叠信息：{Stack}," +
+            $"物品位置：{Position}," +
+            $"物品旋转：{Rotation}," +
+            $"物品缩放：{Scale}," +
+            $"物品特殊数据：{ItemSpecialData}," +
+            $"全局唯一标识：{Guid}";
+            
+        return str;
+    
     }
 
     // 新版方法：通过Vector3参数设置变换数据（含可选参数）

@@ -160,7 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemData_:
     Name: Wall_Wood_Item
-    ID: 21
+    ID: 10
     Description: "\u4EC0\u4E48\u90FD\u6CA1\u6709\u63CF\u8FF0"
     PrefabPath: Wall_Wood_Item
     Volume: 1

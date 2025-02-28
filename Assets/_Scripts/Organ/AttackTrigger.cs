@@ -251,7 +251,7 @@ public class AttackTrigger : MonoBehaviour, IFunction_TriggerAttack
     {
         if(_item == null)
         {
-            Debug.Log("没有装备武器尝试装备");
+          //  Debug.Log("没有装备武器尝试装备");
             //获取子对象中的Item
             _item = GetComponentInChildren<Item>();
         }

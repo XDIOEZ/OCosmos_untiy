@@ -127,6 +127,15 @@ namespace InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""E"",
+                    ""type"": ""Button"",
+                    ""id"": ""3a3d9a7c-08a7-4819-a436-fca3cd0bcf49"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -404,6 +413,17 @@ namespace InputSystem
                     ""action"": ""Mouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5d34c481-8501-4aca-abe0-2b2618af12ab"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""E"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -423,6 +443,7 @@ namespace InputSystem
             m_Win10_Ctrl = m_Win10.FindAction("Ctrl", throwIfNotFound: true);
             m_Win10_MouseScroll = m_Win10.FindAction("MouseScroll", throwIfNotFound: true);
             m_Win10_Mouse = m_Win10.FindAction("Mouse", throwIfNotFound: true);
+            m_Win10_E = m_Win10.FindAction("E", throwIfNotFound: true);
         }
 
         ~@PlayerInputActions()
@@ -500,6 +521,7 @@ namespace InputSystem
         private readonly InputAction m_Win10_Ctrl;
         private readonly InputAction m_Win10_MouseScroll;
         private readonly InputAction m_Win10_Mouse;
+        private readonly InputAction m_Win10_E;
         public struct Win10Actions
         {
             private @PlayerInputActions m_Wrapper;
@@ -515,6 +537,7 @@ namespace InputSystem
             public InputAction @Ctrl => m_Wrapper.m_Win10_Ctrl;
             public InputAction @MouseScroll => m_Wrapper.m_Win10_MouseScroll;
             public InputAction @Mouse => m_Wrapper.m_Win10_Mouse;
+            public InputAction @E => m_Wrapper.m_Win10_E;
             public InputActionMap Get() { return m_Wrapper.m_Win10; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -557,6 +580,9 @@ namespace InputSystem
                 @Mouse.started += instance.OnMouse;
                 @Mouse.performed += instance.OnMouse;
                 @Mouse.canceled += instance.OnMouse;
+                @E.started += instance.OnE;
+                @E.performed += instance.OnE;
+                @E.canceled += instance.OnE;
             }
 
             private void UnregisterCallbacks(IWin10Actions instance)
@@ -594,6 +620,9 @@ namespace InputSystem
                 @Mouse.started -= instance.OnMouse;
                 @Mouse.performed -= instance.OnMouse;
                 @Mouse.canceled -= instance.OnMouse;
+                @E.started -= instance.OnE;
+                @E.performed -= instance.OnE;
+                @E.canceled -= instance.OnE;
             }
 
             public void RemoveCallbacks(IWin10Actions instance)
@@ -624,6 +653,7 @@ namespace InputSystem
             void OnCtrl(InputAction.CallbackContext context);
             void OnMouseScroll(InputAction.CallbackContext context);
             void OnMouse(InputAction.CallbackContext context);
+            void OnE(InputAction.CallbackContext context);
         }
     }
 }

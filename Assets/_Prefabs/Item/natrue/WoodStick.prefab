@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data:
     Name: WoodStick
-    ID: 15
+    ID: 8
     Description: "\u4EC0\u4E48\u90FD\u6CA1\u6709\u63CF\u8FF0"
     PrefabPath: WoodStick
     Volume: 1
@@ -117,6 +117,7 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 0}
     Scale: {x: 0, y: 0, z: 0}
     ItemSpecialData: 
+    code: 
 --- !u!114 &2500450710788803189
 MonoBehaviour:
   m_ObjectHideFlags: 0

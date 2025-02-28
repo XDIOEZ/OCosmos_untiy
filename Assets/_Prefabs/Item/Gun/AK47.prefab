@@ -84,7 +84,7 @@ MonoBehaviour:
   launcher: {fileID: 0}
   gunData:
     Name: AK47
-    ID: 7
+    ID: 15
     Description: AK47
     PrefabPath: AK47
     Volume: 128
@@ -108,6 +108,7 @@ MonoBehaviour:
     MaxAttackDistance: -0.1
     AttackSpeed: 0.1
     ReturnSpeed: 0.1
+    MaxDamageInterval: 0.5
     speed: 100
     fireRate: 10
     timeSinceLastFire: 0

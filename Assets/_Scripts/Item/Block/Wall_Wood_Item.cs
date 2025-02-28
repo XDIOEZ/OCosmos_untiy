@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Wall_Wood_Item : Item , IBuild
 {
-    public GenericItemData _itemData_;
+    public Com_ItemData _itemData_;
     public override ItemData Item_Data 
     {
         get
@@ -14,7 +14,7 @@ public class Wall_Wood_Item : Item , IBuild
         }
         set
         {
-            _itemData_ = (GenericItemData)value;
+            _itemData_ = (Com_ItemData)value;
         }
     }
     // Start is called before the first frame update

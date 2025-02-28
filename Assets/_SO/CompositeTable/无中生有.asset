@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34a5dfd199ff0f4e9936bc051da42e5, type: 3}
   m_Name: "\u65E0\u4E2D\u751F\u6709"
   m_EditorClassIdentifier: 
+  recipeID: a5b63f05-a5f3-4866-bb16-5eb24add4f86
+  version: 1.2.0
   inputs:
     RowItems_List:
     - ItemName: 

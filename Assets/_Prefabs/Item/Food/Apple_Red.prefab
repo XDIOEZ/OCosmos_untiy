@@ -160,7 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     Name: Apple_Red
-    ID: 9
+    ID: 16
     Description: "\u4EC0\u4E48\u90FD\u6CA1\u6709\u63CF\u8FF0"
     PrefabPath: Apple_Red
     Volume: 1
@@ -175,8 +175,6 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 0}
     Scale: {x: 0, y: 0, z: 0}
     ItemSpecialData: 
-  entity_Nutrient:
-    food_Energy: 15
 --- !u!1001 &7828416414188325075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -274,6 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f44560372e4e55418fb7e2807d1c5cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sortingLayerName: Default
 --- !u!4 &8663612773969056445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1485988496169376366, guid: 2d0c561055bcb784db474f1baf0c2f41, type: 3}

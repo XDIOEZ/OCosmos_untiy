@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Sirenix.OdinInspector;
+using NUnit.Framework;
 
 [CreateAssetMenu(fileName = "新合成配方", menuName = "合成/合成配方")]
 public class CraftingRecipeSO : ScriptableObject
@@ -98,7 +99,7 @@ public class CraftingRecipeSO : ScriptableObject
     {
         return isValid;
     }
-
+    [Button("打印配方信息")]
     public override string ToString()
     {
         return $"配方名称: {name}\n" +
@@ -106,6 +107,18 @@ public class CraftingRecipeSO : ScriptableObject
                $"状态: {(isValid ? "有效" : "无效")}\n" +
                $"输入材料: {inputs.ToString()}\n" +
                $"输出产物: {outputs.ToString()}";
+    }
+    //输出输入材料和产物的字符串
+    public string PrintRecipe()
+    {
+
+        string[] ingredientStrings = new string[inputs.RowItems_List.Count];
+        foreach (var ingredient in inputs.RowItems_List)
+        {
+            ingredientStrings[inputs.RowItems_List.IndexOf(ingredient)] = ingredient.ToString();
+        }
+        Debug.Log($"原材料: [{string.Join(",", ingredientStrings)}]");
+        return $"原材料: [{string.Join(",", ingredientStrings)}]";
     }
     #endregion
 
@@ -117,7 +130,7 @@ public class Input_List
 {
     [Header("需要的原材料列表")]
     public List<CraftingIngredient> RowItems_List = new List<CraftingIngredient>();
-
+    [Button]
     public override string ToString()
     {
         if (RowItems_List == null || RowItems_List.Count == 0)
@@ -128,7 +141,7 @@ public class Input_List
         {
             ingredientStrings.Add(ingredient.ToString());
         }
-        return $"原材料: [{string.Join(", ", ingredientStrings)}]";
+        return $"原材料: [{string.Join(",", ingredientStrings)}]";
     }
 
     public string ToString(bool Ranking)
@@ -170,7 +183,7 @@ public class Output_List
         {
             resultStrings.Add($"{result.resultAmount}x  {result.resultItem}");
         }
-        return $"产物: [{string.Join(", ", resultStrings)}]";
+        return $"产物: [{string.Join(",", resultStrings)}]";
     }
     public string ToString(bool Ranking)
     {
@@ -202,7 +215,7 @@ public class Result_List
 
     public override string ToString()
     {
-        return $"{resultAmount}x {resultItem}";
+        return $"{resultAmount}x{resultItem}";
     }
 }
 
@@ -211,10 +224,10 @@ public class CraftingIngredient
 {
     public string ItemName = "";
     public int amount = 1;
-
+     
     public override string ToString()
     {
-        return $"{amount}x {ItemName}";
+        return $"{amount}x{ItemName}";
     }
 
     public CraftingIngredient(string inputItem, int amount)

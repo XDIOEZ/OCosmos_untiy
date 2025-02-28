@@ -70,62 +70,69 @@ public class Inventory : MonoBehaviour
     #region 增删改
     public bool AddItem(ItemData Input_ItemData, int Index = 0)
     {
-        
-        if (Input_ItemData == null|| !CanAddTheItem(Input_ItemData))
+        if (Input_ItemData == null || !CanAddTheItem(Input_ItemData))
         {
             Debug.Log("物品为空||物品已满");
             return false;
         }
 
+        bool canStack = false;
+        int stackIndex = -1;
+        int emptyIndex = -1;
+
         // 新增条件：只有当Input_ItemData.Volume < MinStackVolume时才允许堆叠 
-        if (Input_ItemData.Volume >= MinStackVolume)
+        if (Input_ItemData.Volume < MinStackVolume)
         {
-            // 寻找空位 
+            // 检查是否可以堆叠
+            for (int i = 0; i < Data.itemSlots.Count; i++)
+            {
+                if (Data.itemSlots[i].IsFull || Data.itemSlots[i]._ItemData == null || Data.itemSlots[i]._ItemData.ItemSpecialData != Input_ItemData.ItemSpecialData)
+                {
+                    continue;
+                }
+                if (Data.itemSlots[i]._ItemData.PrefabPath == Input_ItemData.PrefabPath && Data.itemSlots[i]._ItemData.ItemSpecialData == Input_ItemData.ItemSpecialData)
+                {
+                    if (Data.itemSlots[i]._ItemData.CurrentVolume + Input_ItemData.CurrentVolume <= Data.itemSlots[i].SlotMaxVolume)
+                    {
+                        canStack = true;
+                        stackIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // 寻找空位
+        if (!canStack)
+        {
             for (int i = 0; i < Data.itemSlots.Count; i++)
             {
                 if (Data.itemSlots[i]._ItemData == null)
                 {
-                    Data.itemSlots[i]._ItemData = Input_ItemData;
-                    onDataChanged.Invoke(i, Input_ItemData);
-                    return true;
+                    emptyIndex = i;
+                    break;
                 }
             }
+        }
+
+        // 进行物品操作
+        if (canStack)
+        {
+            Data.itemSlots[stackIndex]._ItemData.Stack.amount += Input_ItemData.Stack.amount;
+            onDataChanged.Invoke(stackIndex, Input_ItemData);
+            return true;
+        }
+        else if (emptyIndex != -1)
+        {
+            Data.itemSlots[emptyIndex]._ItemData = Input_ItemData;
+            onDataChanged.Invoke(emptyIndex, Input_ItemData);
+            return true;
+        }
+        else
+        {
             Debug.Log("背包已满");
             return false;
         }
-
-        // 原有的堆叠逻辑 
-        for (int i = 0; i < Data.itemSlots.Count; i++)
-        {
-            if (Data.itemSlots[i].IsFull || Data.itemSlots[i]._ItemData == null|| Data.itemSlots[i]._ItemData.ItemSpecialData != Input_ItemData.ItemSpecialData)
-            {
-                continue;
-            }
-            if (Data.itemSlots[i]._ItemData.PrefabPath == Input_ItemData.PrefabPath && Data.itemSlots[i]._ItemData.ItemSpecialData == Input_ItemData.ItemSpecialData)
-            {
-                if (Data.itemSlots[i]._ItemData.CurrentVolume + Input_ItemData.CurrentVolume > Data.itemSlots[i].SlotMaxVolume)
-                {
-                    break;
-                }
-                Data.itemSlots[i]._ItemData.Stack.amount += Input_ItemData.Stack.amount;
-                onDataChanged.Invoke(i, Input_ItemData);
-                return true;
-            }
-        }
-
-        // 如果没有找到可堆叠的位置，则寻找空位 
-        for (int i = 0; i < Data.itemSlots.Count; i++)
-        {
-            if (Data.itemSlots[i]._ItemData == null)
-            {
-                Data.itemSlots[i]._ItemData = Input_ItemData;
-                onDataChanged.Invoke(i, Input_ItemData);
-                return true;
-            }
-        }
-
-        Debug.Log("背包已满");
-        return false;
     }
     public bool CanAddTheItem(ItemData Input_ItemData)
     {
@@ -510,17 +517,9 @@ public class Inventory : MonoBehaviour
 [System.Serializable]
 public class Inventory_Data
 {
-
-    ItemSlot[,] _items_grid = new ItemSlot[10, 10];//保存物品的网格
-
-    public int currentCapacity = 0;//当前容量
     public string inventoryName = string.Empty;//背包名称
 
     public List<ItemSlot> itemSlots = new List<ItemSlot>();//保存物品的列表
-
-    public int maxCapacity = 10;//最大容量
-
-    public bool needRefresh = false;//是否需要刷新网格
 }
 
 public class CloneItem<T> where T : ItemData

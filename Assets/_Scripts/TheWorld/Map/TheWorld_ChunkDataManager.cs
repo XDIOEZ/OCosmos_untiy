@@ -118,12 +118,12 @@ public class TheWorld_ChunkDataManager
     {
         if (mapData == null)
         {
-            Debug.LogError("要添加的地图数据为空");
+            Debug.Log("要添加的地图数据为空");
             return;
         }
         if (ReadLoadMapData == null)
         {
-            Debug.LogError("ReadLoadMapData 为空");
+            Debug.Log("ReadLoadMapData 为空");
             return;
         }
         ReadLoadMapData[mapData.MapCenter] = mapData;

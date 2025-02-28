@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class Log : Item
 {
-    public GenericItemData _data;
+    public Com_ItemData _data;
 
     public override ItemData Item_Data 
     {
         get => _data;
-        set => _data = (GenericItemData)value;
+        set => _data = (Com_ItemData)value;
     }
 /*    public override Item_Data GetData()
     {

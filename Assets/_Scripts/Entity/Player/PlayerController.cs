@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     [ShowInInspector] public ItemDroper ItemDroper { get; private set; }
 
+    [ShowInInspector] public HandForInteract _handForInteract{ get; private set; }
+
     public PlayerUIManager _playerUI;
     [SerializeField] private List<Canvas> _bagCanvases;
     [SerializeField] private List<Canvas> _settingCanvases;
@@ -116,7 +118,7 @@ public class PlayerController : MonoBehaviour
         BodyTurning = GetComponentInChildren<TrunBody>();
         Running = GetComponentInChildren<Runner>();
         Movement = GetComponentInChildren<IFunction_Move>();
-
+        _handForInteract = GetComponentInChildren<HandForInteract>();
         Hotbar = _playerUI.QuickAccessBar.GetComponent<Inventory_HotBar>();
 
 
@@ -151,6 +153,8 @@ public class PlayerController : MonoBehaviour
         //监听Ctrl键
         win10.Ctrl.started += (InputAction.CallbackContext context ) => { CtrlIsDown = true; };
         win10.Ctrl.canceled += (InputAction.CallbackContext context) => { CtrlIsDown = false; };
+        //对E键进行监听
+        win10.E.performed += Interact;
 
 
 
@@ -160,6 +164,11 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region 物品操作
+    //和工作方块交互
+    public void Interact(InputAction.CallbackContext context = default)
+    { 
+         _handForInteract.Interact_Start();
+    }
     public void PlayerDropItem(InputAction.CallbackContext context = default)
     {
         ItemDroper.DropItem();

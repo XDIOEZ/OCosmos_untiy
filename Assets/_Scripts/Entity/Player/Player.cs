@@ -47,6 +47,7 @@ public class Player : Entity, INutrient,IReceiveDamage
             Data._entityData.hp = value;
         }
     }
+
     public override void Die()
     {
         throw new NotImplementedException();

@@ -66,6 +66,7 @@ public abstract class Item : MonoBehaviour
         Item_Data.PrefabPath = this.gameObject.name;
         Item_Data.ID = ++XDTool.ItemId;
         Item_Data.Guid = XDTool.NextGuid;
+        Item_Data.Description = Item_Data.ToString();
     }
 #endif
 
